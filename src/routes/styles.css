@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text&family=M+PLUS+1:wght@300;400&family=Work+Sans:wght@300&display=swap');
+
+
+body {
+	margin: 0;
+	font-family: 'Work Sans', sans-serif;
+	background-color: #ffffff;
+	color: black;
+	font-weight: 300;	
+	min-height: 100vh;
+}
+.home {
+    min-height: 100vh;
+}
+.col {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.row {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+h1 {
+	margin-top: 0;
+	font-size: 3.1rem;
+	line-height: 1.4em;
+}
+p {
+	font-weight: 400;
+	color: #202020;
+	font-size: 1.1em;
+	font-family: 'M PLUS 1', sans-serif;
+}
+a {
+	text-decoration: none;
+	color: rgb(92, 92, 92);
+}
