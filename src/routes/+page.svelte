@@ -7,8 +7,8 @@
   <div class="col half">
     <h1>SvelteKit Auth with Descope Landing Page Template</h1>
     <p>
-      This is a sample app to demonstrate Descope
-      with <a href="https://sveltekit.authjs.dev">SvelteKit Auth</a> for authentication.
+      This is a sample app to demonstrate <a target="_blank" href="https://www.descope.com/">Descope</a>
+      with <a target="_blank" href="https://sveltekit.authjs.dev">SvelteKit Auth</a> for authentication.
     </p>
     <a class="row profile" href="/profile">Profile <span>&#8594;</span></a>
   </div>
