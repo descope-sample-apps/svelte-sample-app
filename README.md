@@ -1,4 +1,4 @@
-![svelte](https://github.com/descope-sample-apps/svelte-sample-app/assets/59460685/669a258c-4c9e-4802-b452-f94e671fa0a4)
+![svelte](https://github.com/descope-sample-apps/svelte-sample-app/assets/59460685/3c672d69-e337-42f5-a6f5-32d7fab19839)
 
 # Svelte Sample App
 
