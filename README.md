@@ -66,7 +66,7 @@ npm run dev
 
 ## ⚠️ Issue Reporting
 
-Descope Explorer allows you to test, demo, and interact with your authentication flow. For any issues or suggestions, feel free to open an issue in the GitHub repository.
+For any issues or suggestions, feel free to open an issue in the GitHub repository.
 
 ## 📜 License
 
