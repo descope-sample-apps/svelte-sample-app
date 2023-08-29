@@ -1,3 +1,5 @@
+![svelte](https://github.com/descope-sample-apps/svelte-sample-app/assets/59460685/669a258c-4c9e-4802-b452-f94e671fa0a4)
+
 # Svelte Sample App
 
 Integrate Descope Authentication in Svelte with SvelteKit Auth by building a company landing page. 
