@@ -26,7 +26,6 @@ export const handle = SvelteKitAuth({
   ],
   callbacks: {
     async jwt({token, account, profile}) {
-        console.log("JWT Callback Triggered")
         if (account) {
             return {
                 ...token,
