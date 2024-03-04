@@ -1,5 +1,5 @@
 import { SvelteKitAuth } from "@auth/sveltekit"
-import { DESCOPE_PROJECT_ID, DESCOPE_ACCESS_KEY } from "$env/static/private"
+import { DESCOPE_ID, DESCOPE_SECRET } from "$env/static/private"
 
 // ignore highlighted errors
 export const handle = SvelteKitAuth({
@@ -8,11 +8,11 @@ export const handle = SvelteKitAuth({
       id: "descope",
       name: "Descope",
       type: "oidc",
-      wellKnown: `https://api.descope.com/${DESCOPE_PROJECT_ID}/.well-known/openid-configuration`,
-      issuer: `https://api.descope.com/${DESCOPE_PROJECT_ID}`,
+      wellKnown: `https://api.descope.com/${DESCOPE_ID}/.well-known/openid-configuration`,
+      issuer: `https://api.descope.com/${DESCOPE_ID}`,
       authorization: { params: { scope: "openid email profile" } },
-      clientId: DESCOPE_PROJECT_ID, 
-      clientSecret: DESCOPE_ACCESS_KEY,
+      clientId: DESCOPE_ID, 
+      clientSecret: DESCOPE_SECRET,
       checks: ["pkce", "state"],
       profile(profile) {
         return {
@@ -46,8 +46,8 @@ export const handle = SvelteKitAuth({
                 const response = await fetch("https://api.descope.com/oauth2/v1/token", {
                     headers: {"Content-Type": "application/x-www-form-urlencoded"},
                     body: new URLSearchParams({
-                        client_id: DESCOPE_PROJECT_ID,
-                        client_secret: DESCOPE_ACCESS_KEY,
+                        client_id: DESCOPE_ID,
+                        client_secret: DESCOPE_SECRET,
                         grant_type: "refresh_token",
                         refresh_token: token.refresh_token,
                     }),
@@ -75,7 +75,7 @@ export const handle = SvelteKitAuth({
         if (token.profile) {
           session.user = token.profile;
         }
-        
+
         session.error = token.error
         session.accessToken = token.access_token
         return session
