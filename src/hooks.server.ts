@@ -1,5 +1,5 @@
 import { SvelteKitAuth } from "@auth/sveltekit"
-import { DESCOPE_ID, DESCOPE_SECRET } from "$env/static/private"
+import { DESCOPE_ID, DESCOPE_SECRET, DISCOVERY_URL, ISSUER_URL } from "$env/static/private"
 
 // ignore highlighted errors
 export const handle = SvelteKitAuth({
@@ -8,8 +8,8 @@ export const handle = SvelteKitAuth({
       id: "descope",
       name: "Descope",
       type: "oidc",
-      wellKnown: `https://api.descope.com/${DESCOPE_ID}/.well-known/openid-configuration`,
-      issuer: `https://api.descope.com/${DESCOPE_ID}`,
+      wellKnown: `${DISCOVERY_URL}`,
+      issuer: `${ISSUER_URL}`,
       authorization: { params: { scope: "openid email profile" } },
       clientId: DESCOPE_ID, 
       clientSecret: DESCOPE_SECRET,
@@ -42,7 +42,8 @@ export const handle = SvelteKitAuth({
             return token
         } else {
             try {
-                const response = await fetch("https://api.descope.com/oauth2/v1/token", {
+                const base_url = ISSUER_URL.slice(8, ISSUER_URL.lastIndexOf('/'))
+                const response = await fetch('https://' + base_url +'/oauth2/v1/token', {
                     headers: {"Content-Type": "application/x-www-form-urlencoded"},
                     body: new URLSearchParams({
                         client_id: DESCOPE_ID,
